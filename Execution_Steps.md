@@ -25,7 +25,8 @@ This project focuses on predicting customer churn for a telecommunications compa
   - Performed data cleaning tasks such as handling missing values, removing unnecessary columns, and transforming variables.
   - Explored the data distributions and relationships by Univarient and BiVarient analysis between variables through visualizations and statistical summaries.
 
-    **Execute Jupyter Notebook:** - run `Data_Cleaning_and_Exploration.ipynb` to preprocess and explore the dataset.
+    **Execute Jupyter Notebook:**
+    run `Data_Cleaning_and_Exploration.ipynb` to preprocess and explore the dataset.
 
 
 #### 2. Modeling and Evaluation
@@ -35,7 +36,8 @@ This project focuses on predicting customer churn for a telecommunications compa
   - Implemented SMOTEENN technique to handle class imbalance and optimize model performance.
   - Saved the finalized model using pickle for deployment.
  
-     **Execute Jupyter Notebook:** -  `Modeling_and_Evaluation.ipynb` to train, evaluate, and save the machine learning model.
+     **Execute Jupyter Notebook:**
+     run `Modeling_and_Evaluation.ipynb` to train, evaluate, and save the machine learning model.
 
 #### 3. Deployment with Flask
 - **Flask Application: `app.py`**
