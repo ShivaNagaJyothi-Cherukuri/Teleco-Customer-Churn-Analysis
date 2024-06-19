@@ -4,13 +4,6 @@
 ### Overview
 This project focuses on predicting customer churn for a telecommunications company using machine learning techniques. Customer churn, which measures the rate at which customers stop doing business with a company, is a critical metric for businesses to understand and mitigate. By predicting churn, companies can proactively take actions to retain customers and optimize business strategies.
 
-### File Structure of Flask Application
-
-- **`app.py`**: Main Flask application file containing routes and logic for predicting churn based on user inputs.
-- **`templates`** (directory):
-  - **`index.html`**: HTML template for the web interface allowing users to input customer details and receive predictions.
-- **`static`** (directory):
-  - **`style.css`**: CSS stylesheet for customizing the appearance of the HTML templates.
 
 ### Steps to Execute the Project Locally
 
@@ -46,9 +39,17 @@ This project focuses on predicting customer churn for a telecommunications compa
 
 #### 3. Deployment with Flask
 - **Flask Application: `app.py`**
-  - Deploywd the trained machine learning model using Flask for real-time predictions.
+  - Deployed the trained machine learning model using Flask for real-time predictions.
   - Developed a responsive web interface with HTML and CSS allowing users to input customer details.
   - Implemented logic to preprocess user inputs, make predictions using the trained model, and display the results.
+ 
+      **File Structure of Flask Application**
+
+      - **`app.py`**: Main Flask application file containing routes and logic for predicting churn based on user inputs.
+      - **`templates`** (directory):
+      - **`index.html`**: HTML template for the web interface allowing users to input customer details and receive predictions.
+      - **`static`** (directory):
+      - **`style.css`**: CSS stylesheet for customizing the appearance of the HTML templates.
  
        **Run Flask Application:** 
      ```bash
