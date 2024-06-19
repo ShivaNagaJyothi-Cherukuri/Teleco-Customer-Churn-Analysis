@@ -25,8 +25,8 @@ Ensure Python 3.x and necessary libraries (scikit-learn, pandas, numpy, Flask) a
   - Performed data cleaning tasks such as handling missing values, removing unnecessary columns, and transforming variables.
   - Explored the data distributions and relationships by Univarient and BiVarient analysis between variables through visualizations and statistical summaries.
 
-    #### **Execute Jupyter Notebook:**
-    -run `Data_Cleaning_and_Exploration.ipynb` to preprocess and explore the dataset.
+- **Execute Jupyter Notebook:**
+   - run `Data_Cleaning_and_Exploration.ipynb` to preprocess and explore the dataset.
 
 
 #### 2. Modeling and Evaluation
@@ -36,28 +36,27 @@ Ensure Python 3.x and necessary libraries (scikit-learn, pandas, numpy, Flask) a
   - Implemented SMOTEENN technique to handle class imbalance and optimize model performance.
   - Saved the finalized model using pickle for deployment.
  
-     #### **Execute Jupyter Notebook:**
-     run `Modeling_and_Evaluation.ipynb` to train, evaluate, and save the machine learning model.
+- **Execute Jupyter Notebook:**
+   - run `Modeling_and_Evaluation.ipynb` to train, evaluate, and save the machine learning model.
 
 #### 3. Deployment with Flask
 - **Flask Application: `app.py`**
   - Deployed the trained machine learning model using Flask for real-time predictions.
   - Developed a responsive web interface with HTML and CSS allowing users to input customer details.
   - Implemented logic to preprocess user inputs, make predictions using the trained model, and display the results.
- 
-      #### **File Structure of Flask Application**
 
-      - **`app.py`**: Main Flask application file containing routes and logic for predicting churn based on user inputs.
-      - **`templates`** (directory):
-      - **`index.html`**: HTML template for the web interface allowing users to input customer details and receive predictions.
-      - **`static`** (directory):
-      - **`style.css`**: CSS stylesheet for customizing the appearance of the HTML templates.
+- **File Structure of Flask Application**
+   - **`app.py`**: Main Flask application file containing routes and logic for predicting churn based on user inputs.
+   - **`templates`** (directory):
+   - **`index.html`**: HTML template for the web interface allowing users to input customer details and receive predictions.
+   - **`static`** (directory):
+   - **`style.css`**: CSS stylesheet for customizing the appearance of the HTML templates.
  
-      #### **Run Flask Application:** 
+- **Run Flask Application:** 
      ```bash
      python app.py
      ```
-      - Open a web browser and go to `http://localhost:5000` to interact with the application.
+     - Open a web browser and go to `http://localhost:5000` to interact with the application.
 
 ### Tableau Dashboards and Stories
 
