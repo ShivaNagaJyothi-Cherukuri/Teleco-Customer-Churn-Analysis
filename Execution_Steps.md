@@ -14,7 +14,7 @@ This project focuses on predicting customer churn for a telecommunications compa
    ```
 
 **Setup Environment:**
-Ensure Python 3.x and necessary libraries (scikit-learn, pandas, numpy, Flask) are installed (Use a virtual environment if needed):
+- Ensure Python 3.x and necessary libraries (scikit-learn, pandas, numpy, Flask) are installed (Use a virtual environment if needed):
    ```bash
    pip install -r requirements.txt
    ```
@@ -47,10 +47,8 @@ Ensure Python 3.x and necessary libraries (scikit-learn, pandas, numpy, Flask) a
 
 - **File Structure of Flask Application**
    - **`app.py`**: Main Flask application file containing routes and logic for predicting churn based on user inputs.
-   - **`templates`** (directory):
-   - **`index.html`**: HTML template for the web interface allowing users to input customer details and receive predictions.
-   - **`static`** (directory):
-   - **`style.css`**: CSS stylesheet for customizing the appearance of the HTML templates.
+   - **`templates`**/ **`index.html`**: HTML template for the web interface allowing users to input customer details and receive predictions.
+   - **`static`**/ **`style.css`**: CSS stylesheet for customizing the appearance of the HTML templates.
  
 - **Run Flask Application:** 
      ```bash
