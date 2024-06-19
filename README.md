@@ -1,8 +1,6 @@
 ## Customer-Churn-Analysis
 
 ![TCC](https://github.com/ShivaNagaJyothi-Cherukuri/Teleco-Customer-Churn-Analysis/assets/125705831/05488a65-037b-4e3f-986e-7e989e5e3955)
-Certainly! Here's an updated version of the README that includes information about your Tableau dashboards and stories:
-
 --
 ### Overview
 This project focuses on predicting customer churn for a telecommunications company using machine learning techniques. Customer churn, which measures the rate at which customers stop doing business with a company, is a critical metric for businesses to understand and mitigate. By predicting churn, companies can proactively take actions to retain customers and optimize business strategies.
