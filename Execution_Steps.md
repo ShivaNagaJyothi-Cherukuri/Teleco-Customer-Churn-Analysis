@@ -14,10 +14,10 @@ This project focuses on predicting customer churn for a telecommunications compa
    ```
 
 **Setup Environment:**
-   - Ensure Python 3.x and necessary libraries (scikit-learn, pandas, numpy, Flask) are installed (Use a virtual environment if needed):
-     ```bash
-     pip install -r requirements.txt
-     ```
+Ensure Python 3.x and necessary libraries (scikit-learn, pandas, numpy, Flask) are installed (Use a virtual environment if needed):
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 #### 1. Data Cleaning and Exploration
 - **Jupyter Notebook: `Data_Cleaning_and_Exploration.ipynb`**
@@ -25,8 +25,8 @@ This project focuses on predicting customer churn for a telecommunications compa
   - Performed data cleaning tasks such as handling missing values, removing unnecessary columns, and transforming variables.
   - Explored the data distributions and relationships by Univarient and BiVarient analysis between variables through visualizations and statistical summaries.
 
-    **Execute Jupyter Notebook:**
-    run `Data_Cleaning_and_Exploration.ipynb` to preprocess and explore the dataset.
+    #### **Execute Jupyter Notebook:**
+    -run `Data_Cleaning_and_Exploration.ipynb` to preprocess and explore the dataset.
 
 
 #### 2. Modeling and Evaluation
@@ -36,7 +36,7 @@ This project focuses on predicting customer churn for a telecommunications compa
   - Implemented SMOTEENN technique to handle class imbalance and optimize model performance.
   - Saved the finalized model using pickle for deployment.
  
-     **Execute Jupyter Notebook:**
+     #### **Execute Jupyter Notebook:**
      run `Modeling_and_Evaluation.ipynb` to train, evaluate, and save the machine learning model.
 
 #### 3. Deployment with Flask
@@ -45,7 +45,7 @@ This project focuses on predicting customer churn for a telecommunications compa
   - Developed a responsive web interface with HTML and CSS allowing users to input customer details.
   - Implemented logic to preprocess user inputs, make predictions using the trained model, and display the results.
  
-      **File Structure of Flask Application**
+      #### **File Structure of Flask Application**
 
       - **`app.py`**: Main Flask application file containing routes and logic for predicting churn based on user inputs.
       - **`templates`** (directory):
@@ -53,11 +53,11 @@ This project focuses on predicting customer churn for a telecommunications compa
       - **`static`** (directory):
       - **`style.css`**: CSS stylesheet for customizing the appearance of the HTML templates.
  
-       **Run Flask Application:** 
+      #### **Run Flask Application:** 
      ```bash
      python app.py
      ```
-   - Open a web browser and go to `http://localhost:5000` to interact with the application.
+      - Open a web browser and go to `http://localhost:5000` to interact with the application.
 
 ### Tableau Dashboards and Stories
 
