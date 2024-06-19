@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telco Customer Churn Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Churn Analysis</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <div class="column">
+                    <label for="customerID">Customer ID:</label>
+                    <input type="text" id="customerID" name="customerID" value="{{ request.form.get('customerID', '') }}" required>
+
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Male" {% if request.form.get('gender') == 'Male' %} selected {% endif %}>Male</option>
+                        <option value="Female" {% if request.form.get('gender') == 'Female' %} selected {% endif %}>Female</option>
+                    </select>
+
+                    <label for="SeniorCitizen">Senior Citizen:</label>
+                    <select id="SeniorCitizen" name="SeniorCitizen" required>
+                        <option value="" disabled selected> </option>
+                        <option value="0" {% if request.form.get('SeniorCitizen') == '0' %} selected {% endif %}>0</option>
+                        <option value="1" {% if request.form.get('SeniorCitizen') == '1' %} selected {% endif %}>1</option>
+                    </select>
+
+                    <label for="Partner">Partner:</label>
+                    <select id="Partner" name="Partner" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Yes" {% if request.form.get('Partner') == 'Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if request.form.get('Partner') == 'No' %} selected {% endif %}>No</option>
+                    </select>
+
+                    <label for="Dependents">Dependents:</label>
+                    <select id="Dependents" name="Dependents" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Yes" {% if request.form.get('Dependents') == 'Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if request.form.get('Dependents') == 'No' %} selected {% endif %}>No</option>
+                    </select>
+
+                    <label for="tenure">Tenure (in months):</label>
+                    <input type="number" id="tenure" name="tenure" value="{{ request.form.get('tenure', '') }}" required>
+
+                    <label for="PhoneService">Phone Service:</label>
+                    <select id="PhoneService" name="PhoneService" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Yes" {% if request.form.get('PhoneService') == 'Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if request.form.get('PhoneService') == 'No' %} selected {% endif %}>No</option>
+                    </select>
+                </div>
+                <div class="column">
+                    <label for="MultipleLines">Multiple Lines:</label>
+                    <select id="MultipleLines" name="MultipleLines" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Yes" {% if request.form.get('MultipleLines') == 'Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if request.form.get('MultipleLines') == 'No' %} selected {% endif %}>No</option>
+                    </select>
+
+                    <label for="InternetService">Internet Service:</label>
+                    <select id="InternetService" name="InternetService" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Fiber optic" {% if request.form.get('InternetService') == 'Fiber optic' %} selected {% endif %}>Fiber optic</option>
+                        <option value="DSL" {% if request.form.get('InternetService') == 'DSL' %} selected {% endif %}>DSL</option>
+                        <option value="No" {% if request.form.get('InternetService') == 'No' %} selected {% endif %}>No</option>
+                    </select>
+
+                    <label for="OnlineSecurity">Online Security:</label>
+                    <select id="OnlineSecurity" name="OnlineSecurity" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Yes" {% if request.form.get('OnlineSecurity') == 'Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if request.form.get('OnlineSecurity') == 'No' %} selected {% endif %}>No</option>
+                    </select>
+
+                    <label for="OnlineBackup">Online Backup:</label>
+                    <select id="OnlineBackup" name="OnlineBackup" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Yes" {% if request.form.get('OnlineBackup') == 'Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if request.form.get('OnlineBackup') == 'No' %} selected {% endif %}>No</option>
+                    </select>
+
+                    <label for="DeviceProtection">Device Protection:</label>
+                    <select id="DeviceProtection" name="DeviceProtection" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Yes" {% if request.form.get('DeviceProtection') == 'Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if request.form.get('DeviceProtection') == 'No' %} selected {% endif %}>No</option>
+                    </select>
+
+                    <label for="TechSupport">Tech Support:</label>
+                    <select id="TechSupport" name="TechSupport" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Yes" {% if request.form.get('TechSupport') == 'Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if request.form.get('TechSupport') == 'No' %} selected {% endif %}>No</option>
+                    </select>
+                </div>
+                <div class="column">
+                    <label for="StreamingTV">Streaming TV:</label>
+                    <select id="StreamingTV" name="StreamingTV" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Yes" {% if request.form.get('StreamingTV') == 'Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if request.form.get('StreamingTV') == 'No' %} selected {% endif %}>No</option>
+                    </select>
+
+                    <label for="StreamingMovies">Streaming Movies:</label>
+                    <select id="StreamingMovies" name="StreamingMovies" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Yes" {% if request.form.get('StreamingMovies') == 'Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if request.form.get('StreamingMovies') == 'No' %} selected {% endif %}>No</option>
+                    </select>
+
+                    <label for="Contract">Contract:</label>
+                    <select id="Contract" name="Contract" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Month-to-month" {% if request.form.get('Contract') == 'Month-to-month' %} selected {% endif %}>Month-to-month</option>
+                        <option value="One year" {% if request.form.get('Contract') == 'One year' %} selected {% endif %}>One year</option>
+                        <option value="Two year" {% if request.form.get('Contract') == 'Two year' %} selected {% endif %}>Two year</option>
+                    </select>
+
+                    <label for="PaperlessBilling">Paperless Billing:</label>
+                    <select id="PaperlessBilling" name="PaperlessBilling" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Yes" {% if request.form.get('PaperlessBilling') == 'Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if request.form.get('PaperlessBilling') == 'No' %} selected {% endif %}>No</option>
+                    </select>
+
+                    <label for="PaymentMethod">Payment Method:</label>
+                    <select id="PaymentMethod" name="PaymentMethod" required>
+                        <option value="" disabled selected> </option>
+                        <option value="Electronic check" {% if request.form.get('PaymentMethod') == 'Electronic check' %} selected {% endif %}>Electronic check</option>
+                        <option value="Mailed check" {% if request.form.get('PaymentMethod') == 'Mailed check' %} selected {% endif %}>Mailed check</option>
+                        <option value="Bank transfer (automatic)" {% if request.form.get('PaymentMethod') == 'Bank transfer (automatic)' %} selected {% endif %}>Bank transfer (automatic)</option>
+                        <option value="Credit card (automatic)" {% if request.form.get('PaymentMethod') == 'Credit card (automatic)' %} selected {% endif %}>Credit card (automatic)</option>
+                    </select>
+
+                    <label for="MonthlyCharges">Monthly Charges:</label>
+                    <input type="number" step="0.01" id="MonthlyCharges" name="MonthlyCharges" value="{{ request.form.get('MonthlyCharges', '') }}" required>
+
+                    <label for="TotalCharges">Total Charges:</label>
+                    <input type="number" step="0.01" id="TotalCharges" name="TotalCharges" value="{{ request.form.get('TotalCharges', '') }}" required>
+                </div>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+        {% if show_result %}
+            <h3>{{ prediction_text }}</h3>
+            <form action="/" method="get">
+                <button type="submit">Next Prediction</button>
+            </form>
+        {% endif %}
+    </div>
+</body>
+</html>
+
